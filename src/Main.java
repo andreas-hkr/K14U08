@@ -1,8 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        // Givet klassen RatNum som representerar ett rationellt tal, lägg till två metoder:
-        //   - mul --> Multiplicera med ett annat rationellt tal
-        //   - add --> Addera ett annat rationellt tal
+        // Utgå från föregående uppgift och se till att talet efter ändring inte har
+        // några gemensamma faktorer i täljaren och nämnaren.
+        //
+        // Tips: Uppgift 13.4 kan vara till stor hjälp...
 
         RatNum r1 = new RatNum();
         r1.p = 2;
