@@ -7,11 +7,11 @@ public class Main {
 
         RatNum r1 = new RatNum();
         r1.p = 2;
-        r1.q = 3;
+        r1.q = 10;
 
         RatNum r2 = new RatNum();
-        r2.p = 2;
-        r2.q = 7;
+        r2.p = 3;
+        r2.q = 10;
 
         r1.add(r2);
 
@@ -27,10 +27,30 @@ class RatNum {
     void mul(RatNum r) {
         p = p * r.p;
         q = q * r.q;
+
+        int x = gcd(p, q);
+        p /= x;
+        q /= x;
     }
 
     void add(RatNum r) {
         p = p * r.q + r.p * q;
         q = q * r.q;
+
+        int x = gcd(p, q);
+        p /= x;
+        q /= x;
+    }
+
+    int gcd(int m, int n) {
+        while (true) {
+            int r = m % n;
+            if (r == 0) {
+                break;
+            }
+            m = n;
+            n = r;
+        }
+        return n;
     }
 }
